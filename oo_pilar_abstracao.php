@@ -4,13 +4,40 @@
 class Funcionario {
     
     //atributos
-    public $nome = "Fabricio";
-    public $telefone = 999068609;
-    public $numFilhos = 2;
+    public $nome = null;
+    public $telefone = null;
+    public $numFilhos = null;
+
+    //setters
+    function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    function setNumFilhos($numFilhos) {
+        $this->numFilhos = $numFilhos;
+    }
+
+    //getters
+    function getNome() {
+        return $this->nome;
+    }
+
+    function getTelefone() {
+        return $this->telefone;
+    }
+
+    function getNumFilhos() {
+        return $this->numFilhos;
+    }
+
 
     //métodos
     function resumirCadFunc() {
-        return "$this->nome possui $this->numFilhos filhos";
+        return "O telefone de $this->nome é $this->telefone, e ela possui $this->numFilhos filhos";
 
     }
 
@@ -21,23 +48,43 @@ class Funcionario {
 
 }
 
+
+
+
 $y = new Funcionario();
+$y->setNome('Thamyres');
+$y->setTelefone(111111);
+$y->setNumFilhos(2);
+
 echo $y->resumirCadFunc();
 
+echo '<hr />';
+echo 'Resumo do Cadastro de Funcionário';
 echo '<br />';
-
-$y->modificarNumFilhos(3);
-echo $y->resumirCadFunc();
+echo "Nome: " . $y->getNome();
+echo '<br />';
+echo "Telefone: " . $y->getTelefone();
+echo '<br />';
+echo "Número de Filhos: " . $y->getNumFilhos();
 
 echo '<hr />';
 
 $x = new Funcionario();
+$x = new Funcionario();
+$x->setNome('Fabricio');
+$x->setTelefone(22222);
+$x->setNumFilhos(3);
+
 echo $x->resumirCadFunc();
 
+echo '<hr />';
+echo 'Resumo do Cadastro de Funcionário';
 echo '<br />';
-
-$y->modificarNumFilhos(1);
-echo $y->resumirCadFunc();
+echo "Nome: " . $x->getNome();
+echo '<br />';
+echo "Telefone: " . $x->getTelefone();
+echo '<br />';
+echo "Número de Filhos: " . $x->getNumFilhos();
 
 
 ?>
