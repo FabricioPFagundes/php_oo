@@ -7,8 +7,20 @@ class Funcionario {
     public $nome = null;
     public $telefone = null;
     public $numFilhos = null;
+    public $cargo = null;
+    public $salario = null;
+
+    // getter e setters (overloading / sobrecarregar)
+    function __set($atributo, $valor) {
+        $this->$atributo = $valor;
+    }
+
+    function __get($atributo) {
+        return $this->$atributo;
+    }
 
     //setters
+    /* 
     function setNome($nome) {
         $this->nome = $nome;
     }
@@ -20,8 +32,10 @@ class Funcionario {
     function setNumFilhos($numFilhos) {
         $this->numFilhos = $numFilhos;
     }
+    */
 
     //getters
+    /*  
     function getNome() {
         return $this->nome;
     }
@@ -33,7 +47,7 @@ class Funcionario {
     function getNumFilhos() {
         return $this->numFilhos;
     }
-
+    */
 
     //métodos
     function resumirCadFunc() {
@@ -48,10 +62,24 @@ class Funcionario {
 
 }
 
-
-
-
 $y = new Funcionario();
+$y->__set('nome', "Fabricio");
+$y->__set('telefone', "1111");
+$y->__set('numFilhos', 1);
+$y->__set('cargo', "Ag. Administrativo");
+$y->__set('salario', 5000);
+
+echo "Nome: " . $y->__get('nome');
+echo '<br />';
+echo "Telefone: " . $y->__get('telefone');
+echo '<br />';
+echo "Número de Filhos: " . $y->__get('numFilhos');
+echo '<br />';
+echo "Cargo: " . $y->__get('cargo');
+echo '<br />';
+echo "Salário: " . $y->__get('salario');
+
+/* 
 $y->setNome('Thamyres');
 $y->setTelefone(111111);
 $y->setNumFilhos(2);
@@ -85,6 +113,6 @@ echo '<br />';
 echo "Telefone: " . $x->getTelefone();
 echo '<br />';
 echo "Número de Filhos: " . $x->getNumFilhos();
-
+*/
 
 ?>
