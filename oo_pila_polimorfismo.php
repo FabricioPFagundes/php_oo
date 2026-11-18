@@ -12,6 +12,10 @@
         function freiar() {
             echo 'Freiando';
         }
+
+        function trocarMarcha() {
+            echo 'Desengatar embreagem com o pé e engatar marcha com a mão';
+        }
     }
 
     class Carro extends Veiculo {
@@ -30,6 +34,7 @@
         function alterarPosicaoVolante() {
             echo 'Volante esta girando';
         }
+
     }
 
     class Moto extends Veiculo {
@@ -44,39 +49,22 @@
         function empinar() {
             echo 'Empinando';
         }
+
+        function trocarMarcha() {
+            echo 'Desengatar embreagem com a mão e engatar marcha com o pé';
+        }
+    }
+
+    class Caminhao extends Veiculo{
+
     }
 
     $carro = new Carro('ABC1234', 'Branca');
-    //echo $carro->acelerar();
-
-    //echo '<br />';
-
     $moto = new Moto('DEF5678', 'Preta');
-    //echo $moto->empinar();
-
-    echo '<pre>';
-    print_r($carro);
-    
+    $caminhao = new Caminhao('GHI9999', 'Azul');
+   
+    $carro->trocarMarcha();
     echo '<br />';
-    
-    print_r($moto);
-    echo '</pre>';
-
-    echo '<hr />';
-
-    $carro->abrirTetoSolar();
+    $moto->trocarMarcha();
     echo '<br />';
-    $carro->acelerar();
-    echo '<br />';
-    $carro->freiar();
-
-    echo '<hr />';
-
-    $moto->empinar();
-    echo '<br />';
-    $moto->acelerar();
-    echo '<br />';
-    $moto->freiar();
-
-
-?>
+    $caminhao->trocarMarcha();
